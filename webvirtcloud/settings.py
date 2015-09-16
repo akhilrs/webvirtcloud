@@ -46,11 +46,22 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'webvirtcloud.urls'
 
 WSGI_APPLICATION = 'webvirtcloud.wsgi.application'
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'webvirtcloud',
+        'USER': 'webvirtcloud',
+        'PASSWORD': 'U4K3RuTvbtNxmNKX',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -74,7 +85,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 
-## WebVirtCloud settings
+# WebVirtCloud settings
 
 # Wobsock port
 WS_PORT = 6080
